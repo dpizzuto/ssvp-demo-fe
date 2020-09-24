@@ -1,0 +1,32 @@
+# this is an auto generated file. This will be overwritten
+query GetInputVideo($id: ID!) {
+  getInputVideo(id: $id) {
+    id
+    bucketname
+    objectkey
+    description
+    url
+    celebritydetection
+    createdAt
+    updatedAt
+  }
+}
+query ListInputVideos(
+  $filter: ModelInputVideoFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listInputVideos(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      bucketname
+      objectkey
+      description
+      url
+      celebritydetection
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}

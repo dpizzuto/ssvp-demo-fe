@@ -1,0 +1,8 @@
+type InputVideo @model {
+  id: ID!
+  bucketname: String!
+  objectkey: String!
+  description: String,
+  url: String,
+  celebritydetection: String
+}

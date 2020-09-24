@@ -1,0 +1,46 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateInputVideo(
+  $input: CreateInputVideoInput!
+  $condition: ModelInputVideoConditionInput
+) {
+  createInputVideo(input: $input, condition: $condition) {
+    id
+    bucketname
+    objectkey
+    description
+    url
+    celebritydetection
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateInputVideo(
+  $input: UpdateInputVideoInput!
+  $condition: ModelInputVideoConditionInput
+) {
+  updateInputVideo(input: $input, condition: $condition) {
+    id
+    bucketname
+    objectkey
+    description
+    url
+    celebritydetection
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteInputVideo(
+  $input: DeleteInputVideoInput!
+  $condition: ModelInputVideoConditionInput
+) {
+  deleteInputVideo(input: $input, condition: $condition) {
+    id
+    bucketname
+    objectkey
+    description
+    url
+    celebritydetection
+    createdAt
+    updatedAt
+  }
+}

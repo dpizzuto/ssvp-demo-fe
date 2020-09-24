@@ -1,0 +1,111 @@
+
+<link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+<script src="https://unpkg.com/video.js/dist/video.js"></script>
+<script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+
+<div class="container">
+  <mat-card>
+    <p>
+      <img class="logo" src="assets/ngx-rocket-logo.png" alt="angular logo" />
+    </p>
+    <mat-card-content>
+      <mat-card-title translate>Available video!</mat-card-title>
+      <mat-card-subtitle>
+      </mat-card-subtitle>
+      <br>
+      
+      <div>
+      <ng-container >
+        <mat-table [dataSource]="inputVideos" class="mat-elevation-z8">
+          
+          <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> Video ID </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+          </ng-container>
+        
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.objectkey}} </mat-cell>
+          </ng-container>
+          
+          <ng-container matColumnDef="description">
+            <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="url">
+            <mat-header-cell *matHeaderCellDef> URL </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.url}} </mat-cell>
+          </ng-container>
+                
+          <mat-header-row *matHeaderRowDef="displayedColumnsVideoTable"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumnsVideoTable;"></mat-row>
+        </mat-table>
+      
+      </ng-container>
+    </div>
+    <br>
+    <br>
+      <!-- <div *ngFor="let inputVideo of inputVideos">
+        <div>ID: {{ inputVideo.id }}</div>
+        <div>Name: {{ inputVideo.objectkey }}</div>
+        <div>Description: {{ inputVideo.description }}</div>
+        <div>URL: {{ inputVideo.url }}</div>
+        <br>
+      </div> -->
+
+      <div>
+        <video id="my_video_1" class="video-js vjs-default-skin" width="640px" height="267px" controls preload="auto"
+        data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
+        <source *ngIf="urlToPlay" [src]="urlToPlay" type='video/mp4' />
+      </video>
+    </div>
+    <br>
+    <br>    
+      <div >
+        <button mat-raised-button (click)="showCelebDetection()" color="primary">Show Celebrity detection</button>
+    </div>
+
+    <div>
+      <ng-container *ngIf="showCelebDetectionFlag">
+<br>
+<br>
+<br>
+        <mat-table [dataSource]="datasource" class="mat-elevation-z8">
+          
+          <ng-container matColumnDef="timestamp">
+            <mat-header-cell *matHeaderCellDef> Timestamp </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.timestamp}} </mat-cell>
+          </ng-container>
+        
+          
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Celebrity Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+          </ng-container>
+        
+          
+          <ng-container matColumnDef="confidence">
+            <mat-header-cell *matHeaderCellDef> Confidence </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.confidence}} </mat-cell>
+          </ng-container>
+                
+          <mat-header-row *matHeaderRowDef="displayedColumnsFRTable"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumnsFRTable;"></mat-row>
+        </mat-table>
+
+      </ng-container>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+
+
+
+
+
+
+
