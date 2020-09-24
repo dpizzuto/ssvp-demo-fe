@@ -3,6 +3,10 @@
 This project was generated with [ngX-Rocket](https://github.com/ngx-rocket/generator-ngx-rocket/)
 version 8.1.0
 
+# Amplify
+
+Be sure to initialize Amplify and check the aws-exports.ts (where Amplify pushes AWS related configurations)
+
 # Getting started
 
 1. Go to project folder and install dependencies:
